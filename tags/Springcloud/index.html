@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>呼吸</title>
+  <title>Tag: Springcloud | 呼吸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="个人技术博客">
 <meta name="keywords" content="前端博客，后端博客，java,vue.js,jquery,html5,springboot,springcloud">
 <meta property="og:type" content="website">
 <meta property="og:title" content="呼吸">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;Springcloud&#x2F;index.html">
 <meta property="og:site_name" content="呼吸">
 <meta property="og:description" content="个人技术博客">
 <meta property="og:locale" content="zh-CN">
@@ -158,98 +158,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-说说springcloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/" class="archive-article-date">
+  	<time datetime="2019-11-30T07:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/">说说springcloud</a>
+      <a class="archive-article-title" href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/">说说springcloud</a>
     </h1>
   
 
-        
-        <a href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/" class="archive-article-date">
-  	<time datetime="2019-11-30T07:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Spring-Cloud是什么鬼？"><a href="#Spring-Cloud是什么鬼？" class="headerlink" title="Spring Cloud是什么鬼？"></a>Spring Cloud是什么鬼？</h2><p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring并没有重复制造轮子，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。</p>
-<p>微服务是可以独立部署、水平扩展、独立访问（或者有独立的数据库）的服务单元，springcloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会非常多，springcloud做为大管家需要管理好这些微服务，自然需要很多小弟来帮忙。</p>
-<p>主要的小弟有：Spring Cloud Config、Spring Cloud Netflix（Eureka、Hystrix、Zuul、Archaius…）、Spring Cloud Bus、Spring Cloud for Cloud Foundry、Spring Cloud Cluster、Spring Cloud Consul、Spring Cloud Security、Spring Cloud Sleuth、Spring Cloud Data Flow、Spring Cloud Stream、Spring Cloud Task、Spring Cloud Zookeeper、Spring Cloud Connectors、Spring Cloud Starters、Spring Cloud CLI，每个小弟身怀独门绝技武功高强下面来做一一介绍。</p>
-<h2 id="核心成员"><a href="#核心成员" class="headerlink" title="核心成员"></a>核心成员</h2><h3 id="Spring-Cloud-Netflix"><a href="#Spring-Cloud-Netflix" class="headerlink" title="Spring Cloud Netflix"></a>Spring Cloud Netflix</h3><p>这可是个大boss，地位仅次于老大，老大各项服务依赖与它，与各种Netflix OSS组件集成，组成微服务的核心，它的小弟主要有Eureka, Hystrix, Zuul, Archaius… 太多了</p>
-<p><strong>Netflix Eureka</strong></p>
-<p>服务中心，云端服务发现，一个基于 REST 的服务，用于定位服务，以实现云端中间层服务发现和故障转移。这个可是springcloud最牛鼻的小弟，服务中心，任何小弟需要其它小弟支持什么都需要从这里来拿，同样的你有什么独门武功的都赶紧过报道，方便以后其它小弟来调用；它的好处是你不需要直接找各种什么小弟支持，只需要到服务中心来领取，也不需要知道提供支持的其它小弟在哪里，还是几个小弟来支持的，反正拿来用就行，服务中心来保证稳定性和质量。</p>
-<p><strong>Netflix Hystrix</strong></p>
-<p>熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。比如突然某个小弟生病了，但是你还需要它的支持，然后调用之后它半天没有响应，你却不知道，一直在等等这个响应；有可能别的小弟也正在调用你的武功绝技，那么当请求多之后，就会发生严重的阻塞影响老大的整体计划。这个时候Hystrix就派上用场了，当Hystrix发现某个小弟不在状态不稳定立马马上让它下线，让其它小弟来顶上来，或者给你说不用等了这个小弟今天肯定不行，该干嘛赶紧干嘛去别在这排队了。</p>
-<p><strong>Netflix Zuul</strong></p>
-<p>Zuul 是在云平台上提供动态路由,监控,弹性,安全等边缘服务的框架。Zuul 相当于是设备和 Netflix 流应用的 Web 网站后端所有请求的前门。当其它门派来找大哥办事的时候一定要先经过zuul,看下有没有带刀子什么的给拦截回去，或者是需要找那个小弟的直接给带过去。</p>
-<p><strong>Netflix Archaius</strong></p>
-<p>配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。可以实现动态获取配置， 原理是每隔60s（默认，可配置）从配置源读取一次内容，这样修改了配置文件后不需要重启服务就可以使修改后的内容生效，前提使用archaius的API来读取。</p>
-<h3 id="Spring-Cloud-Config"><a href="#Spring-Cloud-Config" class="headerlink" title="Spring Cloud Config"></a>Spring Cloud Config</h3><p>俗称的配置中心，配置管理工具包，让你可以把配置放到远程服务器，集中化管理集群配置，目前支持本地存储、Git以及Subversion。就是以后大家武器、枪火什么的东西都集中放到一起，别随便自己带，方便以后统一管理、升级装备。</p>
-<h3 id="Spring-Cloud-Bus"><a href="#Spring-Cloud-Bus" class="headerlink" title="Spring Cloud Bus"></a>Spring Cloud Bus</h3><p>事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。相当于水浒传中日行八百里的神行太保戴宗，确保各个小弟之间消息保持畅通。</p>
-<h3 id="Spring-Cloud-for-Cloud-Foundry"><a href="#Spring-Cloud-for-Cloud-Foundry" class="headerlink" title="Spring Cloud for Cloud Foundry"></a>Spring Cloud for Cloud Foundry</h3><p>Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题</p>
-<p>其实就是与CloudFoundry进行集成的一套解决方案，抱了Cloud Foundry的大腿。</p>
-<h3 id="Spring-Cloud-Cluster"><a href="#Spring-Cloud-Cluster" class="headerlink" title="Spring Cloud Cluster"></a>Spring Cloud Cluster</h3><p>Spring Cloud Cluster将取代Spring Integration。提供在分布式系统中的集群所需要的基础功能支持，如：选举、集群的状态一致性、全局锁、tokens等常见状态模式的抽象和实现。</p>
-<p>如果把不同的帮派组织成统一的整体，Spring Cloud Cluster已经帮你提供了很多方便组织成统一的工具。</p>
-<h3 id="Spring-Cloud-Consul"><a href="#Spring-Cloud-Consul" class="headerlink" title="Spring Cloud Consul"></a>Spring Cloud Consul</h3><p>Consul 是一个支持多数据中心分布式高可用的服务发现和配置共享的服务软件,由 HashiCorp 公司用 Go 语言开发, 基于 Mozilla Public License 2.0 的协议进行开源. Consul 支持健康检查,并允许 HTTP 和 DNS 协议调用 API 存储键值对.</p>
-<p>Spring Cloud Consul 封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p>
-<h2 id="其它小弟"><a href="#其它小弟" class="headerlink" title="其它小弟"></a>其它小弟</h2><p><strong>Spring Cloud Security</strong></p>
-<p>基于spring security的安全工具包，为你的应用程序添加安全控制。这个小弟很牛鼻专门负责整个帮派的安全问题，设置不同的门派访问特定的资源，不能把秘籍葵花宝典泄漏了。</p>
-<p><strong>Spring Cloud Sleuth</strong></p>
-<p>日志收集工具包，封装了Dapper和log-based追踪以及Zipkin和HTrace操作，为SpringCloud应用实现了一种分布式追踪解决方案。</p>
-<p><strong>Spring Cloud Data Flow</strong></p>
-<ul>
-<li>Data flow 是一个用于开发和执行大范围数据处理其模式包括ETL，批量运算和持续运算的统一编程模型和托管服务。</li>
-<li>对于在现代运行环境中可组合的微服务程序来说，Spring Cloud data flow是一个原生云可编配的服务。使用Spring Cloud data flow，开发者可以为像数据抽取，实时分析，和数据导入/导出这种常见用例创建和编配数据通道 （data pipelines）。</li>
-<li>Spring Cloud data flow 是基于原生云对 spring XD的重新设计，该项目目标是简化大数据应用的开发。Spring XD 的流处理和批处理模块的重构分别是基于 Spring Boot的stream 和 task/batch 的微服务程序。这些程序现在都是自动部署单元而且他们原生的支持像 Cloud Foundry、Apache YARN、Apache Mesos和Kubernetes 等现代运行环境。</li>
-<li>Spring Cloud data flow 为基于微服务的分布式流处理和批处理数据通道提供了一系列模型和最佳实践。</li>
-</ul>
-<p><strong>Spring Cloud Stream</strong></p>
-<p>Spring Cloud Stream是创建消息驱动微服务应用的框架。Spring Cloud Stream是基于Spring Boot创建，用来建立单独的／工业级spring应用，使用spring integration提供与消息代理之间的连接。数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p>
-<p>一个业务会牵扯到多个任务，任务之间是通过事件触发的，这就是Spring Cloud stream要干的事了</p>
-<p><strong>Spring Cloud Task</strong></p>
-<p>Spring Cloud Task 主要解决短命微服务的任务管理，任务调度的工作，比如说某些定时任务晚上就跑一次，或者某项数据分析临时就跑几次。</p>
-<p><strong>Spring Cloud Zookeeper</strong></p>
-<p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
-<p>操作Zookeeper的工具包，用于使用zookeeper方式的服务发现和配置管理，抱了Zookeeper的大腿。</p>
-<p><strong>Spring Cloud Connectors</strong></p>
-<p>Spring Cloud Connectors 简化了连接到服务的过程和从云平台获取操作的过程，有很强的扩展性，可以利用Spring Cloud Connectors来构建你自己的云平台。</p>
-<p>便于云端应用程序在各种PaaS平台连接到后端，如：数据库和消息代理服务。</p>
-<p><strong>Spring Cloud Starters</strong></p>
-<p>Spring Boot式的启动项目，为Spring Cloud提供开箱即用的依赖管理。</p>
-<p><strong>Spring Cloud CLI</strong></p>
-<p>基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。</p>
-<h2 id="和Spring-Boot-是什么关系"><a href="#和Spring-Boot-是什么关系" class="headerlink" title="和Spring Boot 是什么关系"></a>和Spring Boot 是什么关系</h2><p>Spring Boot 是 Spring 的一套快速配置脚手架，可以基于Spring Boot 快速开发单个微服务，Spring Cloud是一个基于Spring Boot实现的云应用开发工具；Spring Boot专注于快速、方便集成的单个个体，Spring Cloud是关注全局的服务治理框架；Spring Boot使用了默认大于配置的理念，很多集成方案已经帮你选择好了，能不配置就不配置，Spring Cloud很大的一部分是基于Spring Boot来实现,可以不基于Spring Boot吗？不可以。</p>
-<p>Spring Boot可以离开Spring Cloud独立使用开发项目，但是Spring Cloud离不开Spring Boot，属于依赖的关系。</p>
-<blockquote>
-<p>spring -&gt; spring boot &gt; Spring Cloud 这样的关系。</p>
-</blockquote>
-<h2 id="Spring-Cloud的优势"><a href="#Spring-Cloud的优势" class="headerlink" title="Spring Cloud的优势"></a>Spring Cloud的优势</h2><p>微服务的框架那么多比如：dubbo、Kubernetes，为什么就要使用Spring Cloud的呢？</p>
-<ul>
-<li>产出于spring大家族，spring在企业级开发框架中无人能敌，来头很大，可以保证后续的更新、完善。比如dubbo现在就差不多死了</li>
-<li>有Spring Boot 这个独立干将可以省很多事，大大小小的活Spring Boot都搞的挺不错。</li>
-<li>作为一个微服务治理的大家伙，考虑的很全面，几乎服务治理的方方面面都考虑到了，方便开发开箱即用。</li>
-<li>Spring Cloud 活跃度很高，教程很丰富，遇到问题很容易找到解决方案</li>
-<li>轻轻松松几行代码就完成了熔断、均衡负载、服务中心的各种平台功能</li>
-</ul>
-<p>Spring Cloud对于中小型互联网公司来说是一种福音，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来越来越“云”化的软件开发风格中立有一席之地，尤其是在目前五花八门的分布式解决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当前Servlet规范的诞生，有效推进服务端软件系统技术水平的进步。</p>
-<p><strong>示例代码-github</strong></p>
-<p><strong>示例代码-码云</strong></p>
-<hr>
-<p><strong>作者：纯洁的微笑</strong><br><strong>出处：<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">http://www.ityouknow.com/</a></strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -261,176 +197,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-架构思想/架构思想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/">架构思想</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/30/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/" class="archive-article-date">
-  	<time datetime="2019-11-30T06:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="架构思想"><a href="#架构思想" class="headerlink" title="架构思想"></a>架构思想</h2><hr>
-<p>关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终的蓝图。</p>
-<p>从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象，过什么样的生活，都是自己人生的架构。</p>
-<p>具体到软件架构，维基百科是这样定义的：“有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。系统的各个重要组成部分及其关系构成了系统的架构，这些组成部分可以是具体的功能模块，也可以是非功能的设计与决策，他们相互关系组成一个整体，共同构成了软件系统的架构。</p>
-<p>架构其实就是把复杂的问题抽象化、简单化，可能你会觉得“说起来容易但做起来难”，如何能快速上手。可以多观察，根据物质决定意识，借助生活真实场景（用户故事，要很多故事）来还原这一系列问题，抓住并提取核心特征。</p>
-<h4 id="架构思想-1"><a href="#架构思想-1" class="headerlink" title="架构思想"></a>架构思想</h4><p>CPU运算速度&gt;&gt;&gt;&gt;&gt;内存的读写速度&gt;&gt;&gt;&gt;磁盘读写速度</p>
-<ul>
-<li>满足业务发展需求是最高准则</li>
-<li>业务建模，抽象和枚举是两种方式，需要平衡，不能走极端</li>
-<li>模型要能更真实的反应事物的本质，不是名词概念的堆砌，不能过度设计</li>
-<li>基础架构最关键的是分离不同业务领域、不同技术领域，让整个系统具有持续优化的能力。</li>
-<li>分离基础服务、业务规则、业务流程，选择合适的工具外化业务规则和业务流程</li>
-<li>分离业务组件和技术组件，高类聚，低耦合 - 业务信息的执行可以分散，但业务信息的管理要尽量集中</li>
-<li>不要让软件的逻辑架构与最后物理部署绑死 - 选择合适的技术而不是高深的技术，随着业务的发展调整使用的技术</li>
-<li>好的系统架构需要合适的组织架构去保障 - 团队成员思想的转变，漫长而艰难</li>
-<li>业务架构、系统架构、数据模型</li>
-</ul>
-<h4 id="面对一块新业务，如何系统架构？"><a href="#面对一块新业务，如何系统架构？" class="headerlink" title="面对一块新业务，如何系统架构？"></a>面对一块新业务，如何系统架构？</h4><ul>
-<li>业务分析：输出业务架构图，这个系统里有多少个业务模块，从前台用户到底层一共有多少层。</li>
-<li>系统划分：根据业务架构图输出系统架构图，需要思考的是这块业务划分成多少个系统，可能一个系统能支持多个业务。基于什么原则将一个系统拆分成多个系统？又基于什么原则将两个系统合并成一个系统？</li>
-<li>系统分层：系统是几层架构，基于什么原则将一个系统进行分层，分成多少层？</li>
-<li>模块化：系统里有多少个模块，哪些需要模块化？基于什么原则将一类代码变成一个模块。</li>
-</ul>
-<h4 id="如何模块化"><a href="#如何模块化" class="headerlink" title="如何模块化"></a>如何模块化</h4><ul>
-<li>基于水平切分。把一个系统按照业务类型进行水平切分成多个模块，比如权限管理模块，用户管理模块，各种业务模块等。</li>
-<li>基于垂直切分。把一个系统按照系统层次进行垂直切分成多个模块，如DAO层，SERVICE层，业务逻辑层。</li>
-<li>基于单一职责。将代码按照职责抽象出来形成一个一个的模块。将系统中同一职责的代码放在一个模块里。比如我们开发的系统要对接多个渠道的数据，每个渠道的对接方式和数据解析方式不一样，为避免不同渠道代码的相互影响，我们把各个渠道的代码放在各自的模块里。</li>
-<li>基于易变和不易变。将不易变的代码抽象到一个模块里，比如系统的比较通用的功能。将易变的代码放在另外一个或多个模块里，比如业务逻辑。因为易变的代码经常修改，会很不稳定，分开之后易变代码在修改时候，不会将BUG传染给不变的代码。</li>
-</ul>
-<h4 id="提升系统的稳定性"><a href="#提升系统的稳定性" class="headerlink" title="提升系统的稳定性"></a>提升系统的稳定性</h4><ul>
-<li>流控</li>
-</ul>
-<p>双11期间，对于一些重要的接口（比如帐号的查询接口，店铺首页）做流量控制，超过阈值直接返回失败。 另外对于一些不重要的业务也可以考虑采用降级方案，大促—&gt;邮件系统。根据28原则，提前将大卖家约1W左右在缓存中预热，并设置起止时间，活动期间内这部分大卖家不发交易邮件提醒，以减轻SA邮件服务器的压力。</p>
-<ul>
-<li>容灾</li>
-</ul>
-<p>最大程度保证主链路的可用性，比如我负责交易的下单，而下单过程中有优惠的业务逻辑，此时需要考虑UMP系统挂掉，不会影响用户下单（后面可以通过修改价格弥补），采用的方式是，如果优惠挂掉，重新渲染页面，并增加ump屏蔽标记，下单时会自动屏蔽ump的代码逻辑。 另外还会记录ump系统不可用次数，一定时间内超过阈值，系统会自动报警。</p>
-<ul>
-<li>稳定性</li>
-</ul>
-<p>第三方系统可能会不稳定，存在接口超时或宕机，为了增加系统的健壮性，调用接口时设置超时时间以及异常捕获处理。</p>
-<ul>
-<li>容量规划</li>
-</ul>
-<p>做好容量规划、系统间强弱依赖关系梳理。 如：冷热数据不同处理，早期的订单采用oracle存储，随着订单的数量越来越多，查询缓慢，考虑数据迁移，引入历史表，将已归档的记录迁移到历史表中。当然最好的方法是分库分表。</p>
-<h4 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h4><ul>
-<li>分布式系统</li>
-<li>分布式缓存</li>
-<li>分布式数据</li>
-</ul>
-<h4 id="API-和乐高积木有什么相似之处？"><a href="#API-和乐高积木有什么相似之处？" class="headerlink" title="API 和乐高积木有什么相似之处？"></a>API 和乐高积木有什么相似之处？</h4><p>相信我们大多数人在儿童时期都喜欢玩乐高积木。乐高积木的真正乐趣和吸引力在于，尽管包装盒外面都带有示意图片，但你最终都可以随心所欲得搭出各种样子或造型。</p>
-<p>对 API 的最佳解释就是它们像乐高积木一样。我们可以用创造性的方式来组合它们，而不用在意它们原本的设计和实现意图。</p>
-<p>你可以发现很多 API 和乐高积木的相似之处：</p>
-<ul>
-<li>标准化：通用、标准化的组件，作为基本的构建块（building blocks）；</li>
-<li>可用性：强调可用性，附有文档或使用说明；</li>
-<li>可定制：为不同功能使用不同的API；</li>
-<li>创造性：能够组合不同的 API 来创造混搭的结果；</li>
-</ul>
-<p>乐高和 API 都有超简单的界面/接口，并且借助这样简单的界面/接口，它可以非常直观、容易、快速得构建。</p>
-<p>虽然乐高和 API 一样可能附带示意图片或使用文档，大概描述了推荐玩法或用途，但真正令人兴奋的结果或收获恰恰是通过创造力产生的。</p>
-<p>让我们仔细地思考下上述的提法。在很多情况下，API 的使用者构建出了 API 的构建者超出预期的服务或产品，API 使用者想要的，和 API 构建者认为使用者想要的，这二者之间通常有个断层。事实也确实如此，在 IoT 领域，我们使用 API 创造出了一些非常有创造性的使用场景。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/30/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -452,10 +231,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
