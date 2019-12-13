@@ -158,6 +158,125 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-springboot2-x学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/14/springboot2-x%E5%AD%A6%E4%B9%A0/">springboot2.x学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/14/springboot2-x%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2019-12-13T16:00:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习Spring-Boot2-x"><a href="#学习Spring-Boot2-x" class="headerlink" title="学习Spring Boot2.x"></a>学习Spring Boot2.x</h1><p>Spring Boot提供了很多应用启动器，分别用来支持不同的功能，pom.xml中的以来配置， 因为Spring Boot的自动化配置特性，我们并不需要再考虑项目以来版本问题，使用Spring Boot的应用启动器，它能自动帮我们将相关的以来全部导入到项目中。</p>
+<p>常见的引用启动器：</p>
+<ul>
+<li><p><code>spring-boot-starter</code>: Spring Boot的核心启动器，包含了自动配置、日志和YAML</p>
+</li>
+<li><p><code>spring-boot-starter-aop</code>: 支持AOP面向切面编程的功能，包括spring-aop和AspecJ</p>
+</li>
+<li><p><code>spring-boot-starter-cache</code>: 支持Spring的Cache抽象</p>
+</li>
+<li><p><code>spring-boot-starter-artermis</code>: 通过Apache Artemis支持JMS（Java Message Service）的API</p>
+</li>
+<li><p><code>spring-boot-starter-data-jpa</code>: 支持JPA</p>
+</li>
+<li><p><code>spring-boot-starter-data-solr</code>: 支持Apache Solr搜索平台，包括spring-data-solr</p>
+</li>
+<li><p><code>spring-boot-starter-freemarker</code>: 支持FreeMarker模板引擎</p>
+</li>
+<li><p><code>spring-boot-starter-jdbc</code>: 支持JDBC数据库</p>
+</li>
+<li><p><code>spring-boot-starter-Redis</code>: 支持Redis键值储存数据库，包括spring-redis</p>
+</li>
+<li><p><code>spring-boot-starter-security</code>: 支持spring-security</p>
+</li>
+<li><p><code>spring-boot-starter-thymeleaf</code>: 支持Thymeleaf模板引擎，包括与Spring的集成</p>
+</li>
+<li><p><code>spring-boot-starter-web</code>: 支持全栈式web开发，包括tomcat和Spring-WebMVC</p>
+</li>
+<li><p><code>spring-boot-starter-log4j</code>: 支持Log4J日志框架</p>
+</li>
+<li><p><code>spring-boot-starter-logging</code>: 引入Spring Boot默认的日志框架Logback</p>
+<h2 id="Spring-Boot-项目结构设计"><a href="#Spring-Boot-项目结构设计" class="headerlink" title="Spring Boot 项目结构设计"></a>Spring Boot 项目结构设计</h2></li>
+</ul>
+<p>Spring Boot项目 （即Maven项目），当然拥有最基础的Maven项目结构。除此之外：</p>
+<ol>
+<li>Spring Boot项目中不包含webapp(webroot)目录。</li>
+<li>Spring Boot默认提供的静态资源目录需要置于classpath下，且其下的目录名称要符合一定规定。</li>
+<li>Spring Boot默认不提倡用XML配置文件，主张使用YML作为配置文件格式，YML有更简洁的语法。当然也可以使用.properties作为配置文件格式。</li>
+<li>Spring Boot官方推荐使用Thymeleaf作为前端模板引擎，并且Thymeleaf默认将templates作为静态页面的存放目录（由配置文件指定）。</li>
+<li>Spring Boot默认将<code>resources</code>作为静态资源的存放目录，存放前端静态文件、项目配置文件。</li>
+<li>Spring Boot规定<code>resources</code>下的子级目录名要符合一定规则，一般我们设置<code>resources/static</code>为前端静态（JS,CSS）的存放目录；设置<code>resources/templates</code>作为HTML页面的存放目录。</li>
+<li>Spring Boot指定的Thymeleaf模板引擎文件目录<code>/resources/templates</code>是受保护的目录，这与之前的WEB项目的WEB-INF文件夹和类似，特点就是里面的静态资源不能直接访问，一般我们通过Controller映射访问。</li>
+<li>建议将Mybatis-Mapper的XML映射文件放于<code>resources/</code>目录下，我这里设为<code>resources/mapper</code>目录，且<code>src/main/java/Mapper</code>下的Mapper层接口要使用<code>@Mapper</code>注解标识，不然mybatis找不到接口对应的XML映射文件。</li>
+<li><code>SpringBootApplication.java</code>为项目的启动器类，项目不需要部署到Tomcat上，由SpringBoot提供的服务器部署项目（运行启动器类即可）；且SpringBoot会自动扫描该启动器同级和子级下用注解标识的Bean，也就是之前我们配置的``在SpringBoot中是完全不需类似的配置的。</li>
+<li>Spring Boot不建议使用JSP页面，如果想使用，请自行百度解决办法。我们常用HTML页面+Thymeleaf模板引擎。Thyemeleaf模板引擎提供了很多内置语法，比如：可以通过``取出来后端存放在域对象中的数据。</li>
+<li>上面说了Spring Boot提供的存放HTML静态页面的目录<code>resources/templates</code>是受保护的目录，访问其中的HTML页面要通过Controller映射，这就间接规定了你需要配置Spring的视图解析器，且Controller类不能使用<code>@RestController</code>标识</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/14/springboot2-x%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-说说springcloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -523,11 +642,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Springcloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Springcloud</a>
               </li>
             
             <div class="clearfix"></div>
