@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>架构思想 | 呼吸</title>
+  <title>SpringDateJPA | 呼吸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="架构思想 关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终的蓝图。 从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象，过什么样的生活，都是自己人生的架构。 具体到软件架构，维基百科是这样定义的：“有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。系统的各个重要组成部分及其">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="SpringDate JPASpringData JPA只是SpringData中的一个子模块 JPA是一套标准接口，而Hibernate是JPA的实现 *SpringData JPA 底层默认实现是使用 Hibernate * SPringData JPA 的首个接口是Repository,它是一个标记接口。只要我们的接口实现了这个接口，那么我们就相当于在使用 SpringDataJPA了。 只">
+<meta name="keywords" content="整理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="架构思想">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3&#x2F;%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3&#x2F;index.html">
+<meta property="og:title" content="SpringDateJPA">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;21&#x2F;SpringDateJPA&#x2F;index.html">
 <meta property="og:site_name" content="呼吸">
-<meta property="og:description" content="架构思想 关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终的蓝图。 从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象，过什么样的生活，都是自己人生的架构。 具体到软件架构，维基百科是这样定义的：“有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。系统的各个重要组成部分及其">
+<meta property="og:description" content="SpringDate JPASpringData JPA只是SpringData中的一个子模块 JPA是一套标准接口，而Hibernate是JPA的实现 *SpringData JPA 底层默认实现是使用 Hibernate * SPringData JPA 的首个接口是Repository,它是一个标记接口。只要我们的接口实现了这个接口，那么我们就相当于在使用 SpringDataJPA了。 只">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-30T07:11:52.000Z">
+<meta property="og:updated_time" content="2019-12-21T15:16:30.085Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="呼吸" type="application/atom+xml">
@@ -157,88 +157,116 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-架构思想/架构思想" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SpringDateJPA" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      架构思想
+      SpringDateJPA
     </h1>
   
 
         
-        <a href="/2019/11/30/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/" class="archive-article-date">
-  	<time datetime="2019-11-30T06:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
+        <a href="/2019/12/21/SpringDateJPA/" class="archive-article-date">
+  	<time datetime="2019-12-21T15:15:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="架构思想"><a href="#架构思想" class="headerlink" title="架构思想"></a>架构思想</h2><hr>
-<p>关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终的蓝图。</p>
-<p>从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象，过什么样的生活，都是自己人生的架构。</p>
-<p>具体到软件架构，维基百科是这样定义的：“有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。系统的各个重要组成部分及其关系构成了系统的架构，这些组成部分可以是具体的功能模块，也可以是非功能的设计与决策，他们相互关系组成一个整体，共同构成了软件系统的架构。</p>
-<p>架构其实就是把复杂的问题抽象化、简单化，可能你会觉得“说起来容易但做起来难”，如何能快速上手。可以多观察，根据物质决定意识，借助生活真实场景（用户故事，要很多故事）来还原这一系列问题，抓住并提取核心特征。</p>
-<h4 id="架构思想-1"><a href="#架构思想-1" class="headerlink" title="架构思想"></a>架构思想</h4><p>CPU运算速度&gt;&gt;&gt;&gt;&gt;内存的读写速度&gt;&gt;&gt;&gt;磁盘读写速度</p>
+        <h1 id="SpringDate-JPA"><a href="#SpringDate-JPA" class="headerlink" title="SpringDate JPA"></a>SpringDate JPA</h1><p><strong>SpringData JPA只是SpringData中的一个子模块</strong></p>
+<p><strong>JPA是一套标准接口，而Hibernate是JPA的实现</strong></p>
+<p>*<em>SpringData JPA 底层默认实现是使用 Hibernate *</em></p>
+<p>SPringData JPA 的首个接口是Repository,它是一个标记接口。<strong>只要我们的接口实现了这个接口，那么我们就相当于在使用 SpringDataJPA了。</strong></p>
+<p>只要我们实现了这个接口，我们就可以使用“<strong>按照方法命名规则</strong>”来进行查询。</p>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><ul>
+<li><p>Reposityry </p>
+</li>
+<li><p>Repository Query Specifications</p>
+</li>
+<li><p>RepositoryDefinition</p>
+</li>
+<li><p>Query Annotation</p>
+</li>
+<li><p>Update/Delete/Transaction</p>
+<h2 id="1-2-项目配置"><a href="#1-2-项目配置" class="headerlink" title="1.2 项目配置"></a>1.2 项目配置</h2><ol>
+<li><p>在pom.xml中添加相关依赖</p>
+</li>
+<li><p>在yml或者properties文件中配置对应的属性</p>
+</li>
+<li><p>创建实体和Repository测试</p>
+<p>参考资源：</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/pdw2009/article/details/51115044" target="_blank" rel="noopener">http://blog.csdn.net/pdw2009/article/details/51115044</a></p>
+<p><a href="http://blog.csdn.net/w_x_z_/article/details/53174308" target="_blank" rel="noopener">http://blog.csdn.net/w_x_z_/article/details/53174308</a></p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>例子</strong></p>
+<p><code>Employee findByName(String name);</code></p>
+<p>上面的方法会被解析成SQL语句：select * from Employee where name = ?</p>
+<p>创建了实体就能自动帮我们创建数据库表了，修改了实体字段也能将数据表一起修改。好用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">*雇员：先开发实体类===&gt;自动生成数据表</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">**/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@entity</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> Integer id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> String name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> Integer age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@GeneratedValue</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Id</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.id=id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Column</span>(length = <span class="number">20</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.name = name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.name=name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.age=age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>方法名会比较长：约定大于配置</li>
+<li>对于一些复杂的查询，是很难实现</li>
+</ol>
+<p>也可以用下面这种</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"select o form Employee o where id=(select max(id) form Emoloyee t1)"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Employee <span class="title">getEmployeeByMaxId</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<p>对于修改语句，需要增加Modify注解、并且一定要在事务的管理下才能修改数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Modifying</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"update Employee o set o.age = : age where o.id = :id"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(@Param(<span class="string">"id"</span>)</span>Integer id,@<span class="title">Param</span><span class="params">(<span class="string">"age"</span>)</span>Integer age)</span>;</span></pre></td></tr></table></figure>
+
+<h2 id="1-3repository子类接口"><a href="#1-3repository子类接口" class="headerlink" title="1.3repository子类接口"></a>1.3repository子类接口</h2><h3 id="Repository-Hierarchy"><a href="#Repository-Hierarchy" class="headerlink" title="Repository Hierarchy"></a>Repository Hierarchy</h3><p>CURDRepository接口的实现方法：</p>
 <ul>
-<li>满足业务发展需求是最高准则</li>
-<li>业务建模，抽象和枚举是两种方式，需要平衡，不能走极端</li>
-<li>模型要能更真实的反应事物的本质，不是名词概念的堆砌，不能过度设计</li>
-<li>基础架构最关键的是分离不同业务领域、不同技术领域，让整个系统具有持续优化的能力。</li>
-<li>分离基础服务、业务规则、业务流程，选择合适的工具外化业务规则和业务流程</li>
-<li>分离业务组件和技术组件，高类聚，低耦合 - 业务信息的执行可以分散，但业务信息的管理要尽量集中</li>
-<li>不要让软件的逻辑架构与最后物理部署绑死 - 选择合适的技术而不是高深的技术，随着业务的发展调整使用的技术</li>
-<li>好的系统架构需要合适的组织架构去保障 - 团队成员思想的转变，漫长而艰难</li>
-<li>业务架构、系统架构、数据模型</li>
+<li><p>CrudRepository</p>
+</li>
+<li><p>JpaRepository</p>
+</li>
+<li><p>PagingAndSortinggRespository</p>
+</li>
+<li><p>JpaSpecificationExecutor</p>
+</li>
 </ul>
-<h4 id="面对一块新业务，如何系统架构？"><a href="#面对一块新业务，如何系统架构？" class="headerlink" title="面对一块新业务，如何系统架构？"></a>面对一块新业务，如何系统架构？</h4><ul>
-<li>业务分析：输出业务架构图，这个系统里有多少个业务模块，从前台用户到底层一共有多少层。</li>
-<li>系统划分：根据业务架构图输出系统架构图，需要思考的是这块业务划分成多少个系统，可能一个系统能支持多个业务。基于什么原则将一个系统拆分成多个系统？又基于什么原则将两个系统合并成一个系统？</li>
-<li>系统分层：系统是几层架构，基于什么原则将一个系统进行分层，分成多少层？</li>
-<li>模块化：系统里有多少个模块，哪些需要模块化？基于什么原则将一类代码变成一个模块。</li>
+<p>排序、分页接口：</p>
+<h2 id="PagingAndSortingRespository接口使用详解"><a href="#PagingAndSortingRespository接口使用详解" class="headerlink" title="PagingAndSortingRespository接口使用详解"></a>PagingAndSortingRespository接口使用详解</h2><ul>
+<li><p>该接口包含分页和排序的功能</p>
+</li>
+<li><p>带排序的查询 : findAll(Sort sort)</p>
+</li>
+<li><p>带排序的分页查询: findAll(Pageable pageabke)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPageAndSort</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Sort.Order order = <span class="keyword">new</span> Order(Sort.Direction.DESC, <span class="string">"id"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    SOrt sort = <span class="keyword">new</span> Sort(order);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// page: index是0开始的，不是从1开始的</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//Pageable pageable = new PageRequest(0, 5);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    Pageable pageable = <span class="keyword">new</span> PageRequest(<span class="number">0</span>, <span class="number">5</span>, sort);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    Page&lt;Employee&gt; page = employeePagingAndSortingRepository.findAll(pageable);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的总页数"</span> + page.getTotalPages());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的总记录数"</span> + page.getTotalElements());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前第几页"</span> + (page.getNumber() + <span class="number">1</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前页面的集合"</span> + page.getContent());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前页面的记录数"</span> + page.getNumberOfElements());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="JpaSpecificationExecutor接口使用详解"><a href="#JpaSpecificationExecutor接口使用详解" class="headerlink" title="JpaSpecificationExecutor接口使用详解"></a>JpaSpecificationExecutor接口使用详解</h2><ul>
+<li><p>Specification封装了JPA Criteria查询条件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* root: 代表我们要查询的类型 (Employee)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* query: 添加查询条件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* cb: 构建Predicate</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">**/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Specification&lt;Employee&gt; specification = <span class="keyword">new</span> Specification&lt;Employee&gt;() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;Employee&gt; root,</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="params">                                CriteriaQuery&lt;?&gt; query,</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="params">                                CriteriaBuilder cb)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">// root (employee (age))</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        Path path = root.get(<span class="string">"age"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> cb.gt(path, <span class="number">50</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="JpaRepository接口"><a href="#JpaRepository接口" class="headerlink" title="JpaRepository接口"></a>JpaRepository接口</h2><ul>
+<li><p>findAll</p>
+</li>
+<li><p>findAll(Sort sort)</p>
+</li>
+<li><p>save(entites)</p>
+</li>
+<li><p>flush</p>
+</li>
+<li><p>deleteInBatch(entities)</p>
+<p><strong>JpaRepository 继承 PagingAndSortingRepository,</strong></p>
+<p><strong>PagingAndSortingRepository 又继承CrudRepository,也就是说我们平时自定义的接口只要继承JpaRepository,就相当于拥有了增删改查、分页，等等功能</strong></p>
+</li>
 </ul>
-<h4 id="如何模块化"><a href="#如何模块化" class="headerlink" title="如何模块化"></a>如何模块化</h4><ul>
-<li>基于水平切分。把一个系统按照业务类型进行水平切分成多个模块，比如权限管理模块，用户管理模块，各种业务模块等。</li>
-<li>基于垂直切分。把一个系统按照系统层次进行垂直切分成多个模块，如DAO层，SERVICE层，业务逻辑层。</li>
-<li>基于单一职责。将代码按照职责抽象出来形成一个一个的模块。将系统中同一职责的代码放在一个模块里。比如我们开发的系统要对接多个渠道的数据，每个渠道的对接方式和数据解析方式不一样，为避免不同渠道代码的相互影响，我们把各个渠道的代码放在各自的模块里。</li>
-<li>基于易变和不易变。将不易变的代码抽象到一个模块里，比如系统的比较通用的功能。将易变的代码放在另外一个或多个模块里，比如业务逻辑。因为易变的代码经常修改，会很不稳定，分开之后易变代码在修改时候，不会将BUG传染给不变的代码。</li>
+</li>
 </ul>
-<h4 id="提升系统的稳定性"><a href="#提升系统的稳定性" class="headerlink" title="提升系统的稳定性"></a>提升系统的稳定性</h4><ul>
-<li>流控</li>
+</li>
 </ul>
-<p>双11期间，对于一些重要的接口（比如帐号的查询接口，店铺首页）做流量控制，超过阈值直接返回失败。 另外对于一些不重要的业务也可以考虑采用降级方案，大促—&gt;邮件系统。根据28原则，提前将大卖家约1W左右在缓存中预热，并设置起止时间，活动期间内这部分大卖家不发交易邮件提醒，以减轻SA邮件服务器的压力。</p>
-<ul>
-<li>容灾</li>
-</ul>
-<p>最大程度保证主链路的可用性，比如我负责交易的下单，而下单过程中有优惠的业务逻辑，此时需要考虑UMP系统挂掉，不会影响用户下单（后面可以通过修改价格弥补），采用的方式是，如果优惠挂掉，重新渲染页面，并增加ump屏蔽标记，下单时会自动屏蔽ump的代码逻辑。 另外还会记录ump系统不可用次数，一定时间内超过阈值，系统会自动报警。</p>
-<ul>
-<li>稳定性</li>
-</ul>
-<p>第三方系统可能会不稳定，存在接口超时或宕机，为了增加系统的健壮性，调用接口时设置超时时间以及异常捕获处理。</p>
-<ul>
-<li>容量规划</li>
-</ul>
-<p>做好容量规划、系统间强弱依赖关系梳理。 如：冷热数据不同处理，早期的订单采用oracle存储，随着订单的数量越来越多，查询缓慢，考虑数据迁移，引入历史表，将已归档的记录迁移到历史表中。当然最好的方法是分库分表。</p>
-<h4 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h4><ul>
-<li>分布式系统</li>
-<li>分布式缓存</li>
-<li>分布式数据</li>
-</ul>
-<h4 id="API-和乐高积木有什么相似之处？"><a href="#API-和乐高积木有什么相似之处？" class="headerlink" title="API 和乐高积木有什么相似之处？"></a>API 和乐高积木有什么相似之处？</h4><p>相信我们大多数人在儿童时期都喜欢玩乐高积木。乐高积木的真正乐趣和吸引力在于，尽管包装盒外面都带有示意图片，但你最终都可以随心所欲得搭出各种样子或造型。</p>
-<p>对 API 的最佳解释就是它们像乐高积木一样。我们可以用创造性的方式来组合它们，而不用在意它们原本的设计和实现意图。</p>
-<p>你可以发现很多 API 和乐高积木的相似之处：</p>
-<ul>
-<li>标准化：通用、标准化的组件，作为基本的构建块（building blocks）；</li>
-<li>可用性：强调可用性，附有文档或使用说明；</li>
-<li>可定制：为不同功能使用不同的API；</li>
-<li>创造性：能够组合不同的 API 来创造混搭的结果；</li>
-</ul>
-<p>乐高和 API 都有超简单的界面/接口，并且借助这样简单的界面/接口，它可以非常直观、容易、快速得构建。</p>
-<p>虽然乐高和 API 一样可能附带示意图片或使用文档，大概描述了推荐玩法或用途，但真正令人兴奋的结果或收获恰恰是通过创造力产生的。</p>
-<p>让我们仔细地思考下上述的提法。在很多情况下，API 的使用者构建出了 API 的构建者超出预期的服务或产品，API 使用者想要的，和 API 构建者认为使用者想要的，这二者之间通常有个断层。事实也确实如此，在 IoT 领域，我们使用 API 创造出了一些非常有创造性的使用场景。</p>
 
       
 
@@ -278,7 +306,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
         		</li>
       		
 		</ul>
@@ -334,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/30/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/21/SpringDateJPA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,15 +376,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/30/%E8%AF%B4%E8%AF%B4springcloud/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          说说springcloud
-        
-      </div>
-    </a>
   
+    <a href="/2019/12/17/SpringbootMybatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringbootMybatis</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

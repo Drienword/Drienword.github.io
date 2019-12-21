@@ -158,6 +158,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SpringDateJPA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/21/SpringDateJPA/">SpringDateJPA</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/21/SpringDateJPA/" class="archive-article-date">
+  	<time datetime="2019-12-21T15:15:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringDate-JPA"><a href="#SpringDate-JPA" class="headerlink" title="SpringDate JPA"></a>SpringDate JPA</h1><p><strong>SpringData JPA只是SpringData中的一个子模块</strong></p>
+<p><strong>JPA是一套标准接口，而Hibernate是JPA的实现</strong></p>
+<p>*<em>SpringData JPA 底层默认实现是使用 Hibernate *</em></p>
+<p>SPringData JPA 的首个接口是Repository,它是一个标记接口。<strong>只要我们的接口实现了这个接口，那么我们就相当于在使用 SpringDataJPA了。</strong></p>
+<p>只要我们实现了这个接口，我们就可以使用“<strong>按照方法命名规则</strong>”来进行查询。</p>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><ul>
+<li><p>Reposityry </p>
+</li>
+<li><p>Repository Query Specifications</p>
+</li>
+<li><p>RepositoryDefinition</p>
+</li>
+<li><p>Query Annotation</p>
+</li>
+<li><p>Update/Delete/Transaction</p>
+<h2 id="1-2-项目配置"><a href="#1-2-项目配置" class="headerlink" title="1.2 项目配置"></a>1.2 项目配置</h2><ol>
+<li><p>在pom.xml中添加相关依赖</p>
+</li>
+<li><p>在yml或者properties文件中配置对应的属性</p>
+</li>
+<li><p>创建实体和Repository测试</p>
+<p>参考资源：</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/pdw2009/article/details/51115044" target="_blank" rel="noopener">http://blog.csdn.net/pdw2009/article/details/51115044</a></p>
+<p><a href="http://blog.csdn.net/w_x_z_/article/details/53174308" target="_blank" rel="noopener">http://blog.csdn.net/w_x_z_/article/details/53174308</a></p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>例子</strong></p>
+<p><code>Employee findByName(String name);</code></p>
+<p>上面的方法会被解析成SQL语句：select * from Employee where name = ?</p>
+<p>创建了实体就能自动帮我们创建数据库表了，修改了实体字段也能将数据表一起修改。好用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">*雇员：先开发实体类===&gt;自动生成数据表</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">**/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@entity</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> Integer id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> String name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> Integer age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@GeneratedValue</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Id</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.id=id;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Column</span>(length = <span class="number">20</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.name = name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.name=name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">this</span>.age=age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>方法名会比较长：约定大于配置</li>
+<li>对于一些复杂的查询，是很难实现</li>
+</ol>
+<p>也可以用下面这种</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"select o form Employee o where id=(select max(id) form Emoloyee t1)"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Employee <span class="title">getEmployeeByMaxId</span><span class="params">()</span></span>;</span></pre></td></tr></table></figure>
+
+<p>对于修改语句，需要增加Modify注解、并且一定要在事务的管理下才能修改数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Modifying</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"update Employee o set o.age = : age where o.id = :id"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(@Param(<span class="string">"id"</span>)</span>Integer id,@<span class="title">Param</span><span class="params">(<span class="string">"age"</span>)</span>Integer age)</span>;</span></pre></td></tr></table></figure>
+
+<h2 id="1-3repository子类接口"><a href="#1-3repository子类接口" class="headerlink" title="1.3repository子类接口"></a>1.3repository子类接口</h2><h3 id="Repository-Hierarchy"><a href="#Repository-Hierarchy" class="headerlink" title="Repository Hierarchy"></a>Repository Hierarchy</h3><p>CURDRepository接口的实现方法：</p>
+<ul>
+<li><p>CrudRepository</p>
+</li>
+<li><p>JpaRepository</p>
+</li>
+<li><p>PagingAndSortinggRespository</p>
+</li>
+<li><p>JpaSpecificationExecutor</p>
+</li>
+</ul>
+<p>排序、分页接口：</p>
+<h2 id="PagingAndSortingRespository接口使用详解"><a href="#PagingAndSortingRespository接口使用详解" class="headerlink" title="PagingAndSortingRespository接口使用详解"></a>PagingAndSortingRespository接口使用详解</h2><ul>
+<li><p>该接口包含分页和排序的功能</p>
+</li>
+<li><p>带排序的查询 : findAll(Sort sort)</p>
+</li>
+<li><p>带排序的分页查询: findAll(Pageable pageabke)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPageAndSort</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Sort.Order order = <span class="keyword">new</span> Order(Sort.Direction.DESC, <span class="string">"id"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    SOrt sort = <span class="keyword">new</span> Sort(order);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// page: index是0开始的，不是从1开始的</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//Pageable pageable = new PageRequest(0, 5);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    Pageable pageable = <span class="keyword">new</span> PageRequest(<span class="number">0</span>, <span class="number">5</span>, sort);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    Page&lt;Employee&gt; page = employeePagingAndSortingRepository.findAll(pageable);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的总页数"</span> + page.getTotalPages());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的总记录数"</span> + page.getTotalElements());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前第几页"</span> + (page.getNumber() + <span class="number">1</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前页面的集合"</span> + page.getContent());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"查询的当前页面的记录数"</span> + page.getNumberOfElements());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="JpaSpecificationExecutor接口使用详解"><a href="#JpaSpecificationExecutor接口使用详解" class="headerlink" title="JpaSpecificationExecutor接口使用详解"></a>JpaSpecificationExecutor接口使用详解</h2><ul>
+<li><p>Specification封装了JPA Criteria查询条件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* root: 代表我们要查询的类型 (Employee)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* query: 添加查询条件</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">* cb: 构建Predicate</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">**/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Specification&lt;Employee&gt; specification = <span class="keyword">new</span> Specification&lt;Employee&gt;() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;Employee&gt; root,</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="params">                                CriteriaQuery&lt;?&gt; query,</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="params">                                CriteriaBuilder cb)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">// root (employee (age))</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        Path path = root.get(<span class="string">"age"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> cb.gt(path, <span class="number">50</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="JpaRepository接口"><a href="#JpaRepository接口" class="headerlink" title="JpaRepository接口"></a>JpaRepository接口</h2><ul>
+<li><p>findAll</p>
+</li>
+<li><p>findAll(Sort sort)</p>
+</li>
+<li><p>save(entites)</p>
+</li>
+<li><p>flush</p>
+</li>
+<li><p>deleteInBatch(entities)</p>
+<p><strong>JpaRepository 继承 PagingAndSortingRepository,</strong></p>
+<p><strong>PagingAndSortingRepository 又继承CrudRepository,也就是说我们平时自定义的接口只要继承JpaRepository,就相当于拥有了增删改查、分页，等等功能</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/21/SpringDateJPA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringbootMybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -808,6 +971,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">整理</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
