@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 整理 | 呼吸</title>
+  <title>Shiro总结 | 呼吸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="前端博客，后端博客，java,vue.js,jquery,html5,springboot,springcloud">
-<meta property="og:type" content="website">
-<meta property="og:title" content="呼吸">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E6%95%B4%E7%90%86&#x2F;index.html">
+  <meta name="description" content="Shiro总结 用户认证和用户授权是Shiro的基础，用户认证其实上就是登录操作、用户授权实际上就是对资源拦截的操作 权限管理的模型一般我们都将资源放在权限表中进行管理起来。 我们可以基于角色拦截，也可以基于资源拦截。要是基于角色拦截的话，那么如果角色的权限发生变化了，那就需要修改代码了。推荐使用基于资源进行拦截 这次URL拦截，我们使用一个JavaBean来封装所有的认证信息。当用户登录了之后，">
+<meta name="keywords" content="整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shiro总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;Shiro%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="呼吸">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="Shiro总结 用户认证和用户授权是Shiro的基础，用户认证其实上就是登录操作、用户授权实际上就是对资源拦截的操作 权限管理的模型一般我们都将资源放在权限表中进行管理起来。 我们可以基于角色拦截，也可以基于资源拦截。要是基于角色拦截的话，那么如果角色的权限发生变化了，那就需要修改代码了。推荐使用基于资源进行拦截 这次URL拦截，我们使用一个JavaBean来封装所有的认证信息。当用户登录了之后，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-22T20:31:37.083Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="呼吸" type="application/atom+xml">
@@ -156,36 +157,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Shiro总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Shiro总结
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/" class="archive-article-date">
+
+        
+        <a href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2019-12-22T20:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/">Shiro总结</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Shiro总结"><a href="#Shiro总结" class="headerlink" title="Shiro总结"></a>Shiro总结</h1><ul>
+<li>用户认证和用户授权是Shiro的基础，用户认证其实上就是登录操作、用户授权实际上就是对资源拦截的操作</li>
+<li>权限管理的模型一般我们都将资源放在权限表中进行管理起来。</li>
+<li>我们可以基于角色拦截，也可以基于资源拦截。要是基于角色拦截的话，那么如果角色的权限发生变化了，那就需要修改代码了。<strong>推荐使用基于资源进行拦截</strong></li>
+<li><strong>这次URL拦截，我们使用一个JavaBean来封装所有的认证信息。当用户登录了之后，我们就把用户对菜单栏的访问、对资源的访问权限都封装到JavaBean中</strong></li>
+<li>当使用拦截器进行用户认证的时候，我们只要判断Session域有没有JavaBean对象即可了。</li>
+<li>当拦截器进行用户授权的时候，我们要判断JavaBean中的权限是否能够访问该资源。</li>
+<li>以前URL拦截的方式需要把所有的URL都在数据库进行管理。非常麻烦、不易维护。</li>
+<li><strong>我们希望Shiro去认证的时候是通过realm去数据库查询数据的。而我们reaml默认是查询配置文件的数据的。</strong></li>
+<li>因此，我们需要自定义reaml，使它是去数据库查询数据。只要继承SuthorizingReaml类就行了。</li>
+<li><strong>当然，自定义后的reaml也需要在配置文件中写上我们的自定义reaml的位置的</strong></li>
+<li>散列算法就是为了让密码不被别人给破解。<strong>我们可以对原始的密码加盐再进行散列，这就加大了破解的难道了。</strong></li>
+<li>自定义的reaml也是支持散列算法的，相同的，还是需要我们在配置文件中配置一下就好了。</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,95 +236,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/23/Shiro%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2019-12-22T20:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RBAC新解:基于资源的权限管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">RBAC新解:基于资源的权限管理</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/21/SpringDateJPA/" class="archive-article-date">
-  	<time datetime="2019-12-21T15:15:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/21/SpringDateJPA/">SpringDateJPA</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -308,9 +358,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

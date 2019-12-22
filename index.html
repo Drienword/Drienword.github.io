@@ -158,6 +158,196 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Shiro总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/">Shiro总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2019-12-22T20:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Shiro总结"><a href="#Shiro总结" class="headerlink" title="Shiro总结"></a>Shiro总结</h1><ul>
+<li>用户认证和用户授权是Shiro的基础，用户认证其实上就是登录操作、用户授权实际上就是对资源拦截的操作</li>
+<li>权限管理的模型一般我们都将资源放在权限表中进行管理起来。</li>
+<li>我们可以基于角色拦截，也可以基于资源拦截。要是基于角色拦截的话，那么如果角色的权限发生变化了，那就需要修改代码了。<strong>推荐使用基于资源进行拦截</strong></li>
+<li><strong>这次URL拦截，我们使用一个JavaBean来封装所有的认证信息。当用户登录了之后，我们就把用户对菜单栏的访问、对资源的访问权限都封装到JavaBean中</strong></li>
+<li>当使用拦截器进行用户认证的时候，我们只要判断Session域有没有JavaBean对象即可了。</li>
+<li>当拦截器进行用户授权的时候，我们要判断JavaBean中的权限是否能够访问该资源。</li>
+<li>以前URL拦截的方式需要把所有的URL都在数据库进行管理。非常麻烦、不易维护。</li>
+<li><strong>我们希望Shiro去认证的时候是通过realm去数据库查询数据的。而我们reaml默认是查询配置文件的数据的。</strong></li>
+<li>因此，我们需要自定义reaml，使它是去数据库查询数据。只要继承SuthorizingReaml类就行了。</li>
+<li><strong>当然，自定义后的reaml也需要在配置文件中写上我们的自定义reaml的位置的</strong></li>
+<li>散列算法就是为了让密码不被别人给破解。<strong>我们可以对原始的密码加盐再进行散列，这就加大了破解的难道了。</strong></li>
+<li>自定义的reaml也是支持散列算法的，相同的，还是需要我们在配置文件中配置一下就好了。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/Shiro%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-RBAC新解-基于资源的权限管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">RBAC新解:基于资源的权限管理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2019-12-22T20:30:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RBAC新解：基于资源的权限管理（Resource-Based-Access-Contorl）"><a href="#RBAC新解：基于资源的权限管理（Resource-Based-Access-Contorl）" class="headerlink" title="RBAC新解：基于资源的权限管理（Resource-Based Access Contorl）"></a>RBAC新解：基于资源的权限管理（Resource-Based Access Contorl）</h1><p>(原文地址：<a href="http://www.katasoft.com/blog/2011/05/09/new-rbac-resource-based-access-control" target="_blank" rel="noopener">http://www.katasoft.com/blog/2011/05/09/new-rbac-resource-based-access-control</a>)</p>
+<h2 id="什么是角色"><a href="#什么是角色" class="headerlink" title="什么是角色"></a>什么是角色</h2><p>角色更多的是一种行为的概念：它表示用户能在系统中进行的操作</p>
+<h2 id="基于角色的访问控制-（Role-Based-Access-Contorl）"><a href="#基于角色的访问控制-（Role-Based-Access-Contorl）" class="headerlink" title="基于角色的访问控制 （Role-Based Access Contorl）"></a>基于角色的访问控制 （Role-Based Access Contorl）</h2><p>这种权限控制的方法叫基于角色的访问控制（Role-Based Access Contorl）,简称为RBAC.</p>
+<h2 id="隐式的访问控制"><a href="#隐式的访问控制" class="headerlink" title="隐式的访问控制"></a>隐式的访问控制</h2><p>角色代表一系列的可执行的操作。但我们如何知道一个角色到底关联了哪些可执行的操作呢？</p>
+<p>目前的大多数应用，你并不能明确的知道一个角色到底关联了哪些可执行操作。可能你心里是清楚的（你知道一个又“管理员”角色的用户到底包含了哪些可锁定用户账户、进行系统配置；一个关联了“消费者”这一角色的用户可在网站上进行商品选购），但这些系统并没有明确定义一个角色到底包含了哪些可执行的行为。</p>
+<p>​    拿“项目管理员”来说，系统中并没有对“项目管理员”能进行什么样的操作进行明确定义，它仅是一个字符串名词。开发人员通常将这个名词写在程序里以进行控制访问。例如，判断一个用户是否能查看项目报表，程序员可能会编码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块1.隐式地基于角色的权限控制：</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(user.hasRole(<span class="string">"Project Manager"</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//show the project report button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//don't show the button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>​        在上面的示例代表中，开发人员判断用户是否有“项目管理员”角色来决定是否显示查看项目报表按钮，它并没有明确语句来定义“项目管理员”这一角色到底包含哪些可执行的行为，它只是假设一个关联了项目管理员角色的用户可查看项目报表，而开发人员也是基于这一假设来写 if/else 语句。</p>
+<h2 id="脆弱的权限策略"><a href="#脆弱的权限策略" class="headerlink" title="脆弱的权限策略"></a>脆弱的权限策略</h2><p>​        想上面的权限访问控制是非常脆弱的。一个极小的权限方面的需求的变动都可能导致上面的代码需要重新修改。</p>
+<p>举例来说，假如某一天这个开发团队被告知：“哦，顺便说一下，我们需要一个‘部门管理员‘角色，他们也可以查看项目报表。请做到这一点。“这种情况下，开发人员需要找到上面的代码块并将其修改为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块2. 修改过的隐式的基于角色的权限控制</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (user.hasRole(<span class="string">"Project Manager"</span>) || user.hasRole(<span class="string">"Department Manager"</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//show the project report button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//don't show the button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>随后，开发人员需要更新他的测试用例、重新编译系统，还可能需要重走软件质量控制（QA）流程，然后再重新部署上线，这一切仅仅是因为一个微小的权限方面的需求变动！</p>
+<h2 id="显示地访问控制：更好的选择"><a href="#显示地访问控制：更好的选择" class="headerlink" title="显示地访问控制：更好的选择"></a>显示地访问控制：更好的选择</h2><p>​        从上面的例子我们看到，当权限需求发生变动时，隐式的权限访问控制方式会给程序开发带来沉重的负担。如果能有一种方式在权限需求发生变化时不需要去修改代码就能满足需求就好了。理解的情况是，即使是正在运行的系统，你也可以修改权限策略却又不影响最终用户的使用。当你发现某些错误或危险的安全策略时，你可以迅速的修改策略配置，同时你的系统还能正常使用，而不需要重构代码重新部署系统。</p>
+<p>​        怎样才能达到上面的理想效果呢？我们可以通过显式的（明确的）界定我们在应用中能做的操作来进行。</p>
+<p>​        回顾上面隐式的权限控制的例子，思考一下这些代码最终的目的，想一想它们最终是要做什么样的控制？</p>
+<p>​        从根本上说，这些代码最终是在保护资源（项目报表），是要界定一个用户能对这些资源进行什么样的操作（查看/修改）。当我们将权限控制访问分解到这种原始的层次，我们就可以用一种更细粒度（更富有弹性）的方式来表达权限控制策略。</p>
+<p>​        我们可以修改上面的代码块，以基于资源的语义来更有效的进行权限访问控制：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码块3. 显式的权限控制：</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (user.isPermitted(<span class="string">"projectReport:view:12345"</span>)) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//show the project report button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//don't show the button</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>上面的例子中，我们可明确的看到我们是在控制什么。不要太在意冒号分隔的语法，这仅是一个例子，重点是上面的语句明确的表示了“如果当前用户允许查看编号为12345的项目报表，则显示项目报表按钮”。也就是说，我们明确地说明了一个用户账号可对一个资源实例进行的具体的操作。</p>
+<h2 id="为什么说这种方式更好"><a href="#为什么说这种方式更好" class="headerlink" title="为什么说这种方式更好"></a>为什么说这种方式更好</h2><ul>
+<li><strong>更少的代码重构</strong>：我们是基于系统的功能来进行权限控制</li>
+<li><strong>更直观</strong>：保护资源对象、控制对资源对象的操作（对象及对象的行为）</li>
+<li><strong>更有弹性</strong>：没有写死哪些用户、组或角色可对资源进行操作。可以根据应用的特点定制权限模型</li>
+<li><strong>外部安全策略管理</strong>：可以通过相应的管理工具修改权限策略配置。</li>
+<li><strong>可在运行环境做修改</strong>：因为基于资源的权限控制代码并不依赖于行为的主体（如组、角色、用户），你并没有将行为的主体的字符名词写在代码中。</li>
+</ul>
+<h2 id="现实世界的例子：Apache-Shiro"><a href="#现实世界的例子：Apache-Shiro" class="headerlink" title="现实世界的例子：Apache Shiro"></a>现实世界的例子：Apache Shiro</h2><p>java平台的权限管理框架。通过它的权限（Permission）概念，Shiro很好的支持基于资源的权限访问控制。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">整理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/RBAC%E6%96%B0%E8%A7%A3-%E5%9F%BA%E4%BA%8E%E8%B5%84%E6%BA%90%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringDateJPA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
